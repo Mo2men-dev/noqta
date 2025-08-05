@@ -1,0 +1,57 @@
+@import url("https://fonts.googleapis.com/css2?family=Mozilla+Headline:wght@200..700&display=swap");
+@import "tailwindcss";
+@plugin "@tailwindcss/typography";
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+	transition: all 0.3s ease-in-out;
+}
+
+body {
+	font-family: var(--font-family-base, sans-serif);
+	scroll-behavior: smooth;
+}
+
+@theme {
+	--font-family-heading: "Mozilla Headline", sans-serif;
+}
+
+.prose * {
+	margin-top: 1rem;
+	margin-bottom: 1rem;
+}
+
+.prose li {
+	margin: 0;
+}
+
+.prose hr {
+	border-color: var(--color-border, #333);
+}
+
+.animated-icon {
+	background-image: linear-gradient(45deg, transparent, #000000, transparent);
+	background-size: 400% 100%;
+	-webkit-animation: animated-icon 6s ease-in-out infinite alternate;
+	animation: animated-icon 6s ease-in-out infinite alternate;
+}
+
+@-webkit-keyframes animated-icon {
+	0% {
+		background-position: 100% 0%;
+	}
+	100% {
+		background-position: 0% 0%;
+	}
+}
+@keyframes animated-icon {
+	0% {
+		background-position: 0% 0%;
+	}
+	100% {
+		background-position: 100% 0%;
+	}
+}
