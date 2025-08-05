@@ -17,6 +17,8 @@ const docsList = [
 		title: "Themes",
 		slug: "themes",
 		headers: ["Introduction", "Default Themes", "Custom Themes", "Applying Themes"],
+		prev: { title: "Extensions", slug: "extensions" },
+		next: null,
 	},
 ];
 

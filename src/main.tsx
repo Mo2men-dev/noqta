@@ -10,8 +10,8 @@ ReactDOM.createRoot(document.getElementById("root")!).render(
 	<React.StrictMode>
 		<BrowserRouter>
 			<Routes>
-				<Route path="/" element={<App />} />
-				<Route path="/docs/:slug" element={<Docs />} />
+				<Route path="/noqta" element={<App />} />
+				<Route path="/noqta/docs/:slug" element={<Docs />} />
 				<Route path="*" element={<NotFound />} />
 			</Routes>
 		</BrowserRouter>

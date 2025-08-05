@@ -18,7 +18,7 @@ function Docs() {
 
 	useEffect(() => {
 		if (slug) {
-			fetch(`/docs/${filename}.md`)
+			fetch(`/noqta/docs/${filename}.md`)
 				.then((res) => res.text())
 				.then((text) => setContent(text));
 		}
@@ -35,7 +35,7 @@ function Docs() {
 								{docsList.map((doc) => (
 									<li key={doc.slug} className="mb-2">
 										<Link
-											to={`/docs/${doc.slug}`}
+											to={`/noqta/docs/${doc.slug}`}
 											className={`block p-2 rounded-lg hover:bg-gray-200 transition-colors ${
 												doc.slug === filename ? "bg-slate-100 text-blue-500 font-semibold" : ""
 											}`}>
@@ -54,14 +54,14 @@ function Docs() {
 							<div className="w-full flex justify-around gap-2">
 								{
 									<Link
-										to={docFileData?.prev ? `/docs/${docFileData.prev?.slug}` : ""}
+										to={docFileData?.prev ? `/noqta/docs/${docFileData.prev?.slug}` : ""}
 										className="p-4 bg-slate-200 flex-1 rounded-xl hover:bg-slate-100 hover:text-blue-500">
 										Prev {`${docFileData?.prev ? `- ${docFileData.prev.title}` : ""}`}
 									</Link>
 								}
 								{
 									<Link
-										to={docFileData?.next ? `/docs/${docFileData.next?.slug}` : ""}
+										to={docFileData?.next ? `/noqta/docs/${docFileData.next?.slug}` : ""}
 										className="p-4 bg-slate-200 flex-1 rounded-xl hover:bg-slate-100 hover:text-blue-500 text-end">
 										Next {`${docFileData?.next ? `- ${docFileData.next.title}` : ""}`}
 									</Link>

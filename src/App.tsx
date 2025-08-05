@@ -76,11 +76,11 @@ export const NavBar = () => {
 			<div className="flex shadow-md w-1/4 mx-auto justify-center p-2 rounded-xl max-sm:w-full max-md:w-1/2">
 				<ul className="flex items-center flex-1/2">
 					<NavBarElement>
-						<Link to="/docs/getting-started">Docs</Link>
+						<Link to="/noqta/docs/getting-started">Docs</Link>
 					</NavBarElement>
 				</ul>
 				<div className="flex justify-center items-center flex-1/5">
-					<LinkComponent to="/">
+					<LinkComponent to="/noqta">
 						<NoqtaIcon size={32} />
 					</LinkComponent>
 				</div>
@@ -108,7 +108,7 @@ function App() {
 					</h1>
 					<p className="text-2xl text-center">
 						A <span className="font-extralight italic">flexible</span>,{" "}
-						<LinkComponent className="font-bold text-blue-400" to="/docs">
+						<LinkComponent className="font-bold text-blue-400" to="https://react.dev/">
 							React
 						</LinkComponent>
 						-based{" "}
