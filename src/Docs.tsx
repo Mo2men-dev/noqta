@@ -29,14 +29,14 @@ function Docs() {
 			{docFileData ? (
 				<>
 					<NavBar />
-					<main className="flex p-20 gap-4 my-10 max-lg:w-full relative">
-						<nav className="left-0 h-full w-1/5 p-4 z-50">
-							<ul>
+					<main className="flex p-20 gap-4 my-10 max-sm:flex-col max-md:w-full max-md:p-10 relative">
+						<nav className="left-0 h-full w-1/5 py-4 z-50 text-nowrap max-sm:w-full max-sm:text-xs max-sm:px-1">
+							<ul className="max-md:text-sm max-sm:flex max-sm:items-center max-sm:justify-center">
 								{docsList.map((doc) => (
-									<li key={doc.slug} className="mb-2">
+									<li key={doc.slug} className="my-1">
 										<Link
 											to={`/noqta/docs/${doc.slug}`}
-											className={`block p-2 rounded-lg hover:bg-gray-200 transition-colors ${
+											className={`flex p-2 rounded-lg hover:bg-gray-200 ${
 												doc.slug === filename ? "bg-slate-100 text-blue-500 font-semibold" : ""
 											}`}>
 											{doc.title}
@@ -45,7 +45,7 @@ function Docs() {
 								))}
 							</ul>
 						</nav>
-						<section className="prose">
+						<section className="prose max-sm:prose-sm">
 							<ReactMarkdown
 								remarkPlugins={[remarkGfm]}
 								rehypePlugins={[rehypeHighlight, rehypeSlug, rehypeAutolinkHeadings]}>
@@ -68,8 +68,8 @@ function Docs() {
 								}
 							</div>
 						</section>
-						<nav className="flex-1">
-							<h2 className="text-lg font-semibold">Table of Contents:</h2>
+						<nav className="flex-1 py-4 max-sm:hidden max-lg:text-sm text-nowrap">
+							<h2 className="text-lg font-semibold max-lg:text-md">Table of Contents:</h2>
 							<ul>
 								{docFileData?.headers?.map((header) => (
 									<li key={header}>
