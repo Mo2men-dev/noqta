@@ -31,84 +31,41 @@ You can create your own custom themes by defining a theme object that specifies 
 Here is an example of how to create a custom theme:
 
 ```tsx
-import { Theme, StyleTokens } from "noqta";
+import { Theme } from "noqta";
 
-const colors: StyleTokens = {
-	light: {
-		colors: {
-			primary: "#2563eb",
-			secondary: "#f97316",
-			background: "#f9fafb",
-			text: "#111827",
-		},
-		buttons: {
-			background: "#2563eb",
-			text: "#ffffff",
-			border: "#2563eb",
-			hover: "#1d4ed8",
-		},
-		table: {
-			border: "#333333",
-			text: "#111827",
-			cellBackground: "#f3f4f6",
-			headerBackground: "#e5e7eb",
-		},
+const lightTheme: Theme = {
+	background: {
+		primary: "#eee",
+		hover: "#ddd",
+		active: "#ccc",
 	},
+	text: {
+		primary: "#000",
+		secondary: "#304fcb",
+	},
+	border: {
+		primary: "#304fcb",
+		hover: "#9eb1ff",
+		active: "#fff",
+	},
+	shadow: "#304fcb92",
 };
 
-const customTheme: Theme = {
-	editor: {
-		base: {
-			backgroundColor: colors.light.colors.background,
-			color: colors.light.colors.text,
-		},
-	},
-	bubbleMenu: {
-		base: {
-			backgroundColor: colors.light.colors.background,
-			color: colors.light.colors.text,
-			borderColor: colors.light.colors.primary,
-		},
-	},
-	buttons: {
-		base: {
-			backgroundColor: colors.light.buttons.background,
-			color: colors.light.buttons.text,
-			borderColor: colors.light.buttons.border,
-		},
-		hover: {
-			backgroundColor: colors.light.buttons.hover,
-		},
-	},
-	table: {
-		td: {
-			backgroundColor: colors.light.table.cellBackground,
-			borderColor: colors.light.table.border,
-		},
-		th: {
-			backgroundColor: colors.light.table.headerBackground,
-			borderColor: colors.light.table.border,
-		},
-		table: {
-			color: colors.light.table.text,
-			borderColor: colors.light.table.border,
-		},
-	},
-};
+export default lightTheme;
 ```
 
-This custom theme defines colors for the editor, bubble menu, buttons, and table elements. You can adjust the colors and styles to fit your design requirements.
+This `lightTheme` object defines colors for the primary background, text, border, and shadow. You can customize these values to fit your design requirements.
 
 ## Applying Themes
 
 To apply a custom theme to your Noqta editor, simply pass the theme object as a prop when rendering the `NoqtaEditor` component:
 
 ```tsx
-import customTheme from "./path/to/customTheme";
 import NoqtaEditor from "noqta";
+import lightTheme from "./path/to/lightTheme";
 
 export default function EditorPage() {
-	return <NoqtaEditor theme={customTheme} />;
+	return <NoqtaEditor theme={lightTheme} />;
 }
 ```
 
