@@ -9,12 +9,10 @@ This guide will walk you through installing Noqta and rendering your first edito
 
 ## Installation
 
-You can install Noqta via npm or yarn:
+You can install Noqta via npm:
 
 ```bash
 npm install noqta
-# or
-yarn add noqta
 ```
 
 ## Usage
