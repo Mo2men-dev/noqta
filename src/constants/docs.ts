@@ -20,6 +20,13 @@ const docsList = [
 		prev: { title: "Extensions", slug: "extensions" },
 		next: null,
 	},
+	{
+		title: "API Reference",
+		slug: "api",
+		headers: [],
+		prev: { title: "Themes", slug: "themes" },
+		next: null,
+	},
 ];
 
 export default docsList;
