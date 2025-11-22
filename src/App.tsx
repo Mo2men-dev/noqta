@@ -1,7 +1,18 @@
 import { Link } from "react-router-dom";
 import { FaCheckCircle, FaGithub, FaRegCopy } from "react-icons/fa";
 import { useEffect, useState } from "react";
-import NoqtaEditor from "noqta";
+import NoqtaEditor, { editor, UserAddedTool } from "noqta";
+
+const customTools = [
+	[
+		"Download",
+		"Download",
+		() => {
+			const filename = window.prompt("Enter filename", "document") || "document";
+			editor?.exportPDF(filename);
+		},
+	],
+] as UserAddedTool[];
 
 export const NoqtaIcon = ({ size, animated = false }: { size: number; animated?: boolean }) => {
 	return (
@@ -132,7 +143,7 @@ function App() {
 					</div>
 				</header>
 				<section className="w-full h-1/2">
-					<NoqtaEditor />
+					<NoqtaEditor userAddedTools={[...customTools]} />
 				</section>
 				<section></section>
 			</main>
